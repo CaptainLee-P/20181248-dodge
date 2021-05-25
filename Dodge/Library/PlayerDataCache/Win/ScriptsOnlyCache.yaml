@@ -59,19 +59,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11632}
     - Class: 114
-      Script: {instanceID: 11770}
+      Script: {instanceID: 11744}
     - Class: 114
-      Script: {instanceID: 11836}
+      Script: {instanceID: 11772}
     - Class: 114
-      Script: {instanceID: 12046}
+      Script: {instanceID: 11838}
     - Class: 114
-      Script: {instanceID: 12702}
+      Script: {instanceID: 12048}
     - Class: 114
-      Script: {instanceID: 12870}
+      Script: {instanceID: 12704}
     - Class: 114
-      Script: {instanceID: 13054}
+      Script: {instanceID: 12872}
     - Class: 114
-      Script: {instanceID: 14260}
+      Script: {instanceID: 13056}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -249,6 +249,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: da889b8fd50aaa39e7d8188cbf83eff2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -543,12 +549,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 340446d57eb7a8b77930ef0a22bfa8c8
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameManager
   platform: 5
   scenePathNames:
   - Assets/Scenes/SampleScene.unity

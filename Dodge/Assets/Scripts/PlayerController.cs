@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody playerRigidbody;
     public float speed = 8f;
+    public int hp = 100;
+    public HpBar hpbar;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,25 @@ public class PlayerController : MonoBehaviour
         playerRigidbody.velocity = newVelocity;
     }
     
-    public void Die()
+    public void GetDamage(int damage)
+    {
+        hp -= damage;
+        hpbar.SetHP(hp);
+        if(hp<=0)
+        {
+            Die();
+        }
+    }
+    public void GetHeal(int heal)
+    {
+        hp += heal;
+        if (hp > 100) 
+        {
+            hp = 100;
+        }
+        hpbar.SetHP(hp);
+    }
+    void Die()
     {
         gameObject.SetActive(false);
 

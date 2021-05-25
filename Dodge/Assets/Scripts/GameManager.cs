@@ -9,17 +9,19 @@ public class GameManager : MonoBehaviour
     public GameObject gameoverText;
     public Text timeText;
     public Text recordText;
-
     public GameObject level;
     public GameObject bulletSpawnerPrefab;
+    public GameObject ItemPrefab;
     private Vector3[]bulletSpawners=new Vector3[4];
     int spawnCounter = 0;
+    int prevItemCheck;
 
     private float surviveTime;
     private bool isGameover;
 
     void Start()
     {
+
         surviveTime = 0;
         isGameover = false;
 
@@ -43,10 +45,21 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(!isGameover)
+       
+        if (!isGameover)
         {
             surviveTime += Time.deltaTime;
             timeText.text = "Time: " + (int)surviveTime;
+
+            if (surviveTime % 5 <= 0.01f && prevItemCheck == 4) 
+            {
+                Vector3 randpos = new Vector3(Random.Range(-8f, 8f), 0f, Random.Range(-8f, 8f));
+
+                GameObject item = Instantiate(ItemPrefab, randpos, Quaternion.identity);
+                item.transform.parent = level.transform;
+                item.transform.localPosition = randpos;
+            }
+            prevItemCheck = (int)(surviveTime % 5f);
 
             if (surviveTime < 5f && spawnCounter == 0) 
             {
