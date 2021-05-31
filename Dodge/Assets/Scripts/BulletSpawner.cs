@@ -12,6 +12,15 @@ public class BulletSpawner : MonoBehaviour
     private float spawnRate;
     private float timeAfterSpawn;
 
+    public int hp = 100;
+    public void GetDamage(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
